@@ -11,9 +11,10 @@ return trim(fgets(STDIN));
 
 function splitToInitials($string)
 {
-    $f = ucwords(strtolower($string));
-
-    return $f;
+    list($second,$first) = explode(' ',$string,2);
+    $firstName = mb_substr(ucfirst($first), 0,1);
+    $lastName = mb_substr(ucfirst($second), 0,1);
+    return $f = $lastName . '. ' . $firstName . '.';
 }
 //метод преобразующий строку
 
